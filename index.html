@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>نظام إدارة الرحلات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="glass-panel">
+            <h1>نظام إدارة النقل</h1>
+            <p>صندوق النقل العام</p>
+        </div>
+    </header>
+
+    <main class="app-content">
+        
+        <section id="home" class="tab-content active">
+            <h2 class="section-title">نظرة عامة</h2>
+            <div class="card 3d-card">
+                <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                <div class="card-info">
+                    <h3>الرصيد الحالي</h3>
+                    <p class="amount">1,250,000 د.ع</p>
+                </div>
+            </div>
+            
+            <button class="btn-3d primary-btn mt-20">
+                <i class="fas fa-plus-circle"></i> إنشاء رحلة جديدة
+            </button>
+        </section>
+
+        <section id="trips" class="tab-content">
+            <h2 class="section-title">الرحلات النشطة</h2>
+            <div class="card glass-card">
+                <div class="trip-header">
+                    <span class="badge">عمرة</span>
+                    <span class="date">18 شباط 2026</span>
+                </div>
+                <h3>باص رقم 4 - بغداد إلى مكة</h3>
+                <p>السائق: أحمد | المندوب: علي</p>
+                <button class="btn-3d secondary-btn mt-10">إدارة الرحلة</button>
+            </div>
+        </section>
+
+        <section id="expenses" class="tab-content">
+            <h2 class="section-title">تسجيل مصروف</h2>
+            <form class="glass-form" onsubmit="event.preventDefault();">
+                <div class="input-group 3d-input">
+                    <label>نوع المصروف</label>
+                    <select>
+                        <option>كاز (وقود)</option>
+                        <option>صيانة (إطارات)</option>
+                        <option>نثرية (طعام)</option>
+                    </select>
+                </div>
+                <div class="input-group 3d-input">
+                    <label>المبلغ (دينار)</label>
+                    <input type="number" placeholder="أدخل المبلغ..." required>
+                </div>
+                <button class="btn-3d success-btn mt-20" type="submit">
+                    <i class="fas fa-save"></i> حفظ المصروف
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <nav class="bottom-nav glass-nav">
+        <button class="nav-item active" data-target="home">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </button>
+        <button class="nav-item" data-target="trips">
+            <i class="fas fa-bus"></i>
+            <span>الرحلات</span>
+        </button>
+        <button class="nav-item" data-target="expenses">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <span>المصروفات</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
