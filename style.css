@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+:root {
+    --bg-color: #121826;
+    --primary-color: #00f2fe;
+    --secondary-color: #4facfe;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* الترويسة */
+.app-header {
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.glass-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-panel h1 {
+    font-size: 1.5rem;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-panel p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* منطقة المحتوى */
+.app-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    padding-bottom: 100px; /* مساحة للـ bottom nav */
+}
+
+.section-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* الكروت والتأثيرات ثلاثية الأبعاد */
+.card {
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.3d-card {
+    background: var(--bg-color);
+    box-shadow: 8px 8px 16px var(--shadow-dark), 
+               -8px -8px 16px var(--shadow-light);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+}
+
+.amount {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+/* الأزرار ثلاثية الأبعاد */
+.btn-3d {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 6px 0 #028db8, 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.primary-btn:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #028db8, 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.success-btn {
+    background: linear-gradient(135deg, #0ba360, #3cba92);
+    box-shadow: 0 6px 0 #087a47, 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.success-btn:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #087a47, 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
+    margin-top: 15px;
+}
+
+/* الحقول (Inputs) غائرة 3D */
+.glass-form {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.3d-input {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.3d-input label {
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.3d-input input, .3d-input select {
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: var(--bg-color);
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    outline: none;
+}
+
+.3d-input input:focus, .3d-input select:focus {
+    box-shadow: inset 6px 6px 12px var(--shadow-dark), 
+                inset -6px -6px 12px var(--shadow-light),
+                0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+/* شريط التنقل السفلي الزجاجي */
+.glass-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 70px;
+    background: rgba(18, 24, 38, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 60px;
+}
+
+.nav-item i {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-item.active i {
+    transform: translateY(-5px);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+.mt-20 { margin-top: 20px; }
+.mt-10 { margin-top: 10px; }
